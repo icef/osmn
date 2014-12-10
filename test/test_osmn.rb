@@ -275,7 +275,7 @@ class Tests < Test::Unit::TestCase
   end
 
   def test_address_detail_pub
-    response = OSMN::search('Sakai, Midosuji, Fukushima Ward, Senboku District, Osaka Prefecture, 542-0071, Japan', 1)[0]
+    response = OSMN::search('Sakai, Midosuji, Senboku District, Osaka Prefecture, 542-0071, Japan', 1)[0]
     assert_respond_to(response.address, :pub)
   end
 
@@ -446,6 +446,11 @@ class Tests < Test::Unit::TestCase
   def test_address_detail_tram_stop
     response = OSMN::search('Sevastopol', 1)[0]
     assert_respond_to(response.address, :tram_stop)
+  end
+
+  def test_address_detail_arts_centre
+    response = OSMN::search('Korea SGI Pocheon Cultural Center, 87, Yugyori, Pocheon, Gyeonggi-do, Südkorea', 1)[0]
+    assert_respond_to(response.address, :arts_centre)
   end
 
 end

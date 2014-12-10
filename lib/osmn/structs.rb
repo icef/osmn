@@ -29,6 +29,7 @@ module OSMN
     # extra address details
     :aerodrome,
     :allotments,
+    :arts_centre,
     :atm,
     :attraction,
     :bank,
@@ -96,7 +97,6 @@ module OSMN
     :school,
     :station,
     :stationery,
-    :stream,
     :stream,
     :supermarket,
     :swimming_pool,
