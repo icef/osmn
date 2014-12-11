@@ -453,4 +453,56 @@ class Tests < Test::Unit::TestCase
     assert_respond_to(response.address, :arts_centre)
   end
 
+  def test_address_detail_sports_centre
+    response = OSMN::search('Haderslev', 1)[0]
+    assert_respond_to(response.address, :sports_centre)
+  end
+
+  def test_address_detail_bakery
+    response = OSMN::search('San Jose', 1)[0]
+    assert_respond_to(response.address, :bakery)
+  end
+
+  def test_address_detail_beach
+    response = OSMN::search('Playa Samara, 160, Torito, Guanacaste, Costa Rica', 1)[0]
+    assert_respond_to(response.address, :beach)
+  end
+
+  def test_address_detail_track
+    response = OSMN::search('track, Glenmore Forest, Glenmore, Highland, Scotland, United Kingdom', 1)[0]
+    assert_respond_to(response.address, :track)
+  end
+
+  def test_address_detail_pharmacy
+    response = OSMN::search('Quepos, Calle 4, Quepos, Puntarenas, 60601, Costa Rica', 1)[0]
+    assert_respond_to(response.address, :pharmacy)
+  end
+
+  def test_address_detail_ruins
+    response = OSMN::search('ruins, Mill Lane, Broad Clyst CP, East Devon District, Devon, South West England, England, United Kingdom', 1)[0]
+    assert_respond_to(response.address, :ruins)
+  end
+
+  def test_address_detail_travel_agency
+    response = OSMN::search('Travel Agency, Shota Rustaveli Street, Pecherskyi district, Kyiv, Ukraine', 1)[0]
+    assert_respond_to(response.address, :travel_agency)
+  end
+
+  def test_address_detail_convenience
+    response = OSMN::search('convenience, 2199, Ban Khom Chim, Khon Kaen Province, 40330, Thailand', 1)[0]
+    assert_respond_to(response.address, :convenience)
+  end
+
+
+  def test_address_detail_hostel
+    response = OSMN::search('hostel, Nanfumbambi Road, Makerere Kikoni, Kampala, Central Region, 33903, Uganda', 1)[0]
+    assert_respond_to(response.address, :hostel)
+  end
+
+
+  def test_address_detail_path
+    response = OSMN::search('Jeonju, Chiilli, Gyeongsangnam-do, South Korea', 1)[0]
+    assert_respond_to(response.address, :path)
+  end
+
 end
