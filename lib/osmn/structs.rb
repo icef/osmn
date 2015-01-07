@@ -38,6 +38,7 @@ module OSMN
     :bay,
     :beach,
     :books,
+    :bridleway,
     :brownfield,
     :building,
     :bus_station,

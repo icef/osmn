@@ -505,4 +505,11 @@ class Tests < Test::Unit::TestCase
     assert_respond_to(response.address, :path)
   end
 
+
+  def test_address_detail_bridleway
+    response = OSMN::search('Camino real Bogotá - Choachí, Santa Fe, Bogota, Colombia', 1)[0]
+    assert_respond_to(response.address, :bridleway)
+  end
+
+
 end
