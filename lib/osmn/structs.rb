@@ -104,6 +104,7 @@ module OSMN
     :river,
     :ruins,
     :school,
+    :shoes,
     :sports_centre,
     :station,
     :stationery,

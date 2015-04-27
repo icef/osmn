@@ -212,11 +212,6 @@ class Tests < Test::Unit::TestCase
     assert_respond_to(response.address, :playground)
   end
 
-  def test_address_detail_quarry
-    response = OSMN::search('Anciennes Ardoisières de Maël Carhaix, Maël-Carhaix, Guingamp, Côtes-d\'Armor, Bretagne, France métropolitaine, 22340, France', 1)[0]
-    assert_respond_to(response.address, :quarry)
-  end
-
   def test_address_detail_restaurant
     response = OSMN::search('Nagoya, Fukui Prefecture, Japan', 1)[0]
     assert_respond_to(response.address, :restaurant)
@@ -232,11 +227,6 @@ class Tests < Test::Unit::TestCase
   def test_address_detail_townhall
     response = OSMN::search('Yamagata City Hall, Yamagata, Gifu Prefecture, 501-2192, Japan', 1)[0]
     assert_respond_to(response.address, :townhall)
-  end
-
-  def test_address_detail_address29
-    response = OSMN::search('Wakayama, Tanabe, Nishiumuro County, Wakayama Prefecture, Kinki Region, Japan', 1)[0]
-    assert_respond_to(response.address, :address29)
   end
 
   def test_address_detail_bus_station
@@ -302,7 +292,7 @@ class Tests < Test::Unit::TestCase
   end
 
   def test_address_detail_optician
-    response = OSMN::search('YAMAGUCHI, Minamiawaji, Kako County, Hyogo Prefecture, Kinki Region, Japan', 1)[0]
+    response = OSMN::search('Optician, United States of America', 1)[0]
     assert_respond_to(response.address, :optician)
   end
 
@@ -468,11 +458,6 @@ class Tests < Test::Unit::TestCase
     assert_respond_to(response.address, :beach)
   end
 
-  def test_address_detail_track
-    response = OSMN::search('track, Glenmore Forest, Glenmore, Highland, Scotland, United Kingdom', 1)[0]
-    assert_respond_to(response.address, :track)
-  end
-
   def test_address_detail_pharmacy
     response = OSMN::search('Quepos, Calle 4, Quepos, Puntarenas, 60601, Costa Rica', 1)[0]
     assert_respond_to(response.address, :pharmacy)
@@ -512,8 +497,13 @@ class Tests < Test::Unit::TestCase
   end
 
   def test_address_detail_junction
-    response = OSMN::search('Plovdiv', 1)[0]
+    response = OSMN::search('Plovdiv, Автомагистрала Тракия, Maritsa municipality, Plovdiv Region, Bulgaria', 1)[0]
     assert_respond_to(response.address, :junction)
+  end
+
+  def test_address_detail_shoes
+    response = OSMN::search('shoes, Jardin des Mayeurs, Couvin, Philippeville, Namur, Wallonia, 5660, Belgium', 1)[0]
+    assert_respond_to(response.address, :shoes)
   end
 
 end
