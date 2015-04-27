@@ -245,7 +245,7 @@ class Tests < Test::Unit::TestCase
   end
 
   def test_address_detail_clothes
-    response = OSMN::search('Kasugai, Ichinomiya, Chita, Aichi, Kinki Region, 491-0043, Japan', 1)[0]
+    response = OSMN::search('Kasugai, Ichinomiya, Niwa, Aichi, Chubu Region, 491-0043, Japan', 1)[0]
     assert_respond_to(response.address, :clothes)
   end
 
@@ -260,7 +260,7 @@ class Tests < Test::Unit::TestCase
   end
 
   def test_address_detail_bus_stop
-    response = OSMN::search('Shinjo, Aramachi, Yurihonjo, Ogachi, Akita, Tohoku Region, Tōhoku, Japan', 1)[0]
+    response = OSMN::search('Shinjo, Aramachi, Ogachi, Akita, Tohoku, Japan', 1)[0]
     assert_respond_to(response.address, :bus_stop)
   end
 
@@ -511,5 +511,9 @@ class Tests < Test::Unit::TestCase
     assert_respond_to(response.address, :bridleway)
   end
 
+  def test_address_detail_junction
+    response = OSMN::search('Plovdiv', 1)[0]
+    assert_respond_to(response.address, :junction)
+  end
 
 end

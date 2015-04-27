@@ -71,6 +71,7 @@ module OSMN
     :industrial,
     :information,
     :island,
+    :junction,
     :kindergarten,
     :locality,
     :mall,
